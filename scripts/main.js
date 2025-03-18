@@ -66,11 +66,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* HAMBURGER MENU */
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navUl = document.querySelector('nav ul');
-
-    hamburgerMenu.addEventListener('click', function () {
-        navUl.classList.toggle('active');
-    });
-});
