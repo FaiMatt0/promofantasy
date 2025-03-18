@@ -631,9 +631,9 @@ footer .social a:hover {
     }
 }
 
-/* Aggiungi queste regole CSS per il menu mobile */
+/* Nascondi il menu hamburger su desktop */
 .hamburger-menu {
-    display: none; /* Nascondi il pulsante su desktop */
+    display: none;
     font-size: 24px;
     background: none;
     border: none;
@@ -645,8 +645,9 @@ footer .social a:hover {
     z-index: 1001;
 }
 
+/* Stile per il menu mobile */
 .mobile-nav {
-    display: none; /* Nascondi il menu mobile su desktop */
+    display: none; /* Nascondi il menu mobile di default */
     position: fixed;
     top: 0;
     left: 0;
@@ -675,6 +676,17 @@ footer .social a:hover {
     color: white;
     text-decoration: none;
     font-size: 24px;
+}
+
+/* Mostra il menu hamburger e nascondi il menu desktop su mobile */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Mostra il pulsante hamburger */
+    }
+
+    nav ul {
+        display: none; /* Nascondi il menu desktop */
+    }
 }
 
 @media (max-width: 768px) {
