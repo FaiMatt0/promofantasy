@@ -24,27 +24,45 @@ header, .principale, .su-di-noi, .pricing, .referenze, .faq, footer {
 }
 
 header {
-    background-color: rgba(26, 26, 26, 0.8); /* Sfondo semi-trasparente */
+    background-color: rgba(26, 26, 26, 0.8);
     padding: 10px 0;
-    text-align: center;
-    position: fixed; /* Fissa l'header in alto */
+    position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
-    backdrop-filter: blur(10px); /* Sfocatura */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Ombra leggera */
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header img {
-    max-height: 200px;
+    max-height: 50px;
     transition: max-height 0.3s ease;
 }
 
-header img.small {
-    max-height: 50px;
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
 }
 
-nav ul {
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -53,13 +71,11 @@ nav ul {
     align-items: center;
 }
 
-nav ul li {
+.nav-links li {
     margin: 0 15px;
-    display: flex;
-    align-items: flex-end; /* Allinea il contenuto del <li> nella parte bassa */
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -67,7 +83,7 @@ nav ul li a {
     padding: 5px 0;
 }
 
-nav ul li a::before {
+.nav-links li a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -80,18 +96,43 @@ nav ul li a::before {
     transition: transform 0.3s ease;
 }
 
-nav ul li a:hover::before {
+.nav-links li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-nav ul li a.active {
+.nav-links li a.active {
     color: pink;
 }
 
-nav ul li a.active::before {
+.nav-links li a.active::before {
     transform: scaleX(1);
     background-color: pink;
+}
+
+/* Stili per dispositivi mobili */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 /* Stile per la sezione principale */
