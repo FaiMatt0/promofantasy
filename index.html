@@ -14,8 +14,14 @@
     <canvas id="canvas"></canvas>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html"><img src="images/logo.png"></a></li>
+            <!-- Pulsante per aprire/chiudere il menu a tendina (solo mobile) -->
+            <button class="menu-toggle" aria-label="Apri menu">
+                <span class="hamburger"></span>
+            </button>
+    
+            <!-- Menu principale -->
+            <ul class="menu">
+                <li><a href="index.html"><img src="images/logo.png" class="logo"></a></li>
                 <li><a href="pages/su-di-noi.html">Su di noi</a></li>
                 <li><a href="pages/servizi.html">Servizi</a></li>
                 <li><a href="pages/prodotti.html">Prodotti</a></li>

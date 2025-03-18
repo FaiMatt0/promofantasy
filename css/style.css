@@ -94,6 +94,101 @@ nav ul li a.active::before {
     background-color: pink;
 }
 
+/* Nascondi il pulsante del menu a tendina su desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+}
+
+/* Stile per l'icona hamburger */
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Menu a tendina aperto */
+.menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* Stile per il menu su mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra il pulsante del menu su mobile */
+    }
+
+    .menu {
+        display: none; /* Nascondi il menu di default su mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Posizione sotto l'header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu.active {
+        display: flex; /* Mostra il menu quando è attivo */
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+    }
+
+    .menu li a::before {
+        display: none; /* Rimuovi l'effetto hover su mobile */
+    }
+}
+
 /* Stile per la sezione principale */
 .principale {
     padding-top: 90px; /* Spazio per l'header */

@@ -66,7 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* HAMBURGER MENU */
-document.getElementById('menu-icon').addEventListener('click', function() {
-    var navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function () {
+        menuToggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
 });
