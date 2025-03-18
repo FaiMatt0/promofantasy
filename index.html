@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoFantasy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="icon" type="image/png" href="images/mini-logo.png">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="images/logo.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" class="active"></a></li>
+                <li><a href="pages/su-di-noi.html">Su di noi</a></li>
+                <li><a href="pages/servizi.html">Servizi</a></li>
+                <li><a href="pages/prodotti.html">Prodotti</a></li>
+                <li><a href="pages/investi.html">Investi in pubblicità</a></li>
+                <li><a href="pages/contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+        <!-- MOBILE -->
+        <button class="hamburger-menu">☰</button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="su-di-noi.html">Su di noi</a></li>
+                <li><a href="servizi.html">Servizi</a></li>
+                <li><a href="prodotti.html">Prodotti</a></li>
+                <li><a href="investi.html">Investi</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="principale">
+        <div class="contenuto">
+            <h2>BENVENUTI NEL NOSTRO SITO!</h2>
+            <h1>Noi siamo <span class="highlight">La soluzione</span></h1>
+            <p>Fantasy pubblicità si occupa della tua visibilità, dei tuoi obbiettivi.</p>
+        </div>
+    </div>
+    
+    <div class="su-di-noi">
+        <div class="contenuto">
+            <div class="immagine">
+                <img src="images/about.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Descrizione dell'immagine">
+            </div>
+            <div class="testo">
+                <div class="qualita">
+                    <h2>la miglior soluzione<br>per la pubblicità della tua azienda</h2>
+                    <p>Ti ascoltiamo e vogliamo capire le tue esigenze o problematiche, insieme svilupperemo il progetto più adatto a te.</p>
+                </div>
+                <div class="affidabilita">
+                    <h3>Noi ci siamo sempre!</h3>
+                    <p>La nostra esperienza ci pone come riferimento sul territorio,
+                            anni di presenza confermano che quello che progettiamo poi lo facciamo e portiamo di conseguenza i risultati!</p>
+                </div>
+                <div class="citazione">
+                    “…non si tratta di fare due disegni, si tratta del tuo futuro! 
+                    le nostre campagne di visibilità sono pensate, studiate, pianificate in modo da ottenere risultati, il ROI è il nostro principale obiettivo”
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing">
+        <h2 class="titolo-piani">Scegli il piano giusto per te</h2>
+        <div class="contenuto">
+            <a href="#" class="piano" data-index="2">
+                <h3>Premium</h3>
+                <h4>Classic Piano</h4>
+                <p>Il piano classico, tutta la nostra competenza e servizi per chi desidera un lavoro fatto bene</p>
+                <div class="prezzo">100€</div>
+            </a>
+            <a href="#" class="piano" data-index="3">
+                <h3>Business</h3>
+                <h4>Business Piano</h4>
+                <p>Soluzione ideale per aziende in crescita</p>
+                <div class="prezzo">200€</div>
+            </a>
+            <a href="#" class="piano" data-index="4">
+                <h3>Enterprise</h3>
+                <h4>Enterprise Piano</h4>
+                <p>La soluzione completa per grandi aziende</p>
+                <div class="prezzo">500€</div>
+            </a>
+            <a href="pages/vela.html" class="piano" data-index="1">
+                <h3>CAMION VELA</h3>
+                <h4>Metti la tua pubblicità!</h4>
+                <p>è uno speciale servizio dedicato alla tua azienda</p>
+                <div class="prezzo">Contattaci!</div>
+            </a>
+            <a href="pages/contatti.html" class="piano" data-index="0">
+                <h3>WEB DESIGNER</h3>
+                <h4>Creazione di un sito web personalizzato</h4>
+                <p>Realizziamo un sito web su misura per te o la tua azienda.</p>
+                <div class="prezzo">Contattaci!</div>
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="referenze">
+        <div class="contenuto">
+            <h2>AZIENDE CHE HANNO CREDUTO IN NOI</h2>
+            <div class="grid-referenze">
+                <a href="https://www.comune.pordenone.it/it/comune/progetti/pordenone-capitale-della-cultura-2027"><img src="images/logo1.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Logo Azienda 1"></a>
+                <a href="https://www.creokitchens.it"><img src="images/logo2.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Logo Azienda 2"></a>
+                <a href="https://www.cucinelube.it"><img src="images/logo3.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Logo Azienda 3"></a>
+                <a href="https://paesiinfesta.com"><img src="images/logo4.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Logo Azienda 4"></a>
+                <a href="https://zignagovetro.com"><img src="images/logo5.png" srcset="images/about-small.png 480w, images/about-medium.png 800w, images/about-large.png 1200w" alt="Logo Azienda 5"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="contenuto">
+            <h2>DOMANDE FREQUENTI</h2>
+            <div class="faq-item">
+                <div class="domanda">La consulenza mi costa?</div>
+                <div class="risposta">No, se scegli i nostri servizi o i nostri prodotti.</div>
+            </div>
+            <div class="faq-item">
+                <div class="domanda">Fate il servizio completo?</div>
+                <div class="risposta">Certo! Possiamo sviluppare singoli prodotti o servizi, ma siamo imbattibili sul servizio completo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="domanda">Avete forme diverse di pagamento?</div>
+                <div class="risposta">Certo, possiamo fin da subito programmare il vostro investimento.</div>
+            </div>
+            <div class="faq-item">
+                <div class="domanda">Cos'è il ROI?</div>
+                <div class="risposta">Il ROI è la nostra “guida”. Significa Ritorno sull’investimento, dall’inglese Return On Investment. Significa sviluppare azioni e prodotti che portino a risultati.</div>
+            </div>
+            <div class="faq-item">
+                <div class="domanda">In quali zone operate?</div>
+                <div class="risposta">Normalmente in Friuli ed in Veneto, ma anche in tutta Italia, in base a cosa ci viene richiesto.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contenuto">
+            <!-- Sezione Mappa e Contatti -->
+            <div class="mappa-contatti">
+                <h2>DOVE SIAMO E COME CONTATTARCI</h2>
+                <div class="mappa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d177751.88024998555!2d12.71135!3d45.88385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47796220b190305f%3A0xf2613e4e314d90d1!2sVia%20Trento%2C%2046%2F3%2C%2033082%20Azzano%20Decimo%20PN%2C%20Italy!5e0!3m2!1sen!2sus!4v1741973282379!5m2!1sen!2sus"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="info-contatti">
+                    <h3>Sentiti libero di contattarci per ogni tua domanda</h3>
+                    <p>Via Trento 46/3, Azzano Decimo 33170 (PN)</p>
+                    <p>+39 0434 640806</p>
+                    <p>info@promofantasy.it</p>
+                </div>
+            </div>
+    
+            <!-- Sezione Informazioni Footer -->
+            <div class="footer-info">
+                <p>Fantasy pubblicità, siamo la soluzione alle tue domande!</p>
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+                <p>Partita IVA 01308320934</p>
+                <p>© 2023 PromoFantasy. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/interactive_spider.js"></script>
+</body>
+</html>

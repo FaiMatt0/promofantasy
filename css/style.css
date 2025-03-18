@@ -1,0 +1,715 @@
+body {
+    position: relative;
+    z-index: 1; /* Assicura che il contenuto sia sopra il canvas */
+    background-color: transparent; /* Rimuovi lo sfondo predefinito del body */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene lo scrolling orizzontale */
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh; /* Altezza minima uguale alla viewport */
+}
+
+#canvas {
+    position: fixed; /* Fissa il canvas alla finestra */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Manda il canvas dietro a tutto */
+}
+
+header, .principale, .su-di-noi, .pricing, .referenze, .faq, footer {
+    position: relative;
+    z-index: 2; /* Assicura che questi elementi siano sopra il canvas */
+}
+
+header {
+    background-color: rgba(26, 26, 26, 0.8); /* Sfondo semi-trasparente */
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Fissa l'header in alto */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
+    backdrop-filter: blur(10px); /* Sfocatura */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Ombra leggera */
+}
+
+header img {
+    max-height: 200px;
+    transition: max-height 0.3s ease;
+}
+
+header img.small {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: flex-end; /* Allinea il contenuto del <li> nella parte bassa */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: pink;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav ul li a.active {
+    color: pink;
+}
+
+nav ul li a.active::before {
+    transform: scaleX(1);
+    background-color: pink;
+}
+
+/* Stile per la sezione principale */
+.principale {
+    padding-top: 90px; /* Spazio per l'header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+    color: #fff;
+}
+
+.principale .contenuto {
+    max-width: 1000px; /* Riquadro più grande */
+    width: 90%; /* Occupa il 90% della larghezza disponibile */
+    background: rgba(255, 255, 255, 0.1); /* Sfondo bianco semi-trasparente */
+    border-radius: 50px;
+    padding: 60px; /* Spaziatura interna più ampia */
+    backdrop-filter: blur(10px); /* Effetto di sfocatura */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombra per profondità */
+}
+
+.principale h2 {
+    font-size: 28px; /* Testo leggermente più grande */
+    color: pink; /* Testo  */
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px; /* Spaziatura tra le lettere */
+}
+
+.principale h1 {
+    font-size: 56px; /* Testo più grande */
+    color: pink; /* Testo  */
+    margin: 0 0 25px 0;
+    font-weight: bold;
+    line-height: 1.2; /* Migliora la leggibilità */
+}
+
+.principale p {
+    font-size: 20px; /* Testo più grande */
+    color: #fff; /* Testo bianco */
+    margin: 0;
+    line-height: 1.6; /* Migliora la leggibilità */
+}
+
+/* Stile per il riquadro bianco attorno a "La soluzione" */
+.highlight {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo bianco semi-trasparente */
+    border-radius: 8px; /* Bordi arrotondati */
+    padding: 5px 10px; /* Spaziatura interna */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Ombra bianca per un effetto luminoso */
+    backdrop-filter: blur(5px); /* Leggera sfocatura */
+    display: inline-block; /* Mantiene il riquadro attorno al testo */
+}
+
+/* Stile per la sezione "Su di noi" */
+.su-di-noi {
+    padding: 80px 20px; /* Spaziatura interna */
+    background-color: rgba(26, 26, 26, 0.9); /* Sfondo scuro semi-trasparente */
+    backdrop-filter: blur(10px); /* Sfocatura */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+}
+
+.su-di-noi .contenuto {
+    max-width: 1200px; /* Limita la larghezza del contenuto */
+    margin: 0 auto; /* Centra il contenuto */
+    display: flex; /* Usa Flexbox per allineare immagine e testo */
+    align-items: center; /* Allinea verticalmente al centro */
+    gap: 40px; /* Spazio tra immagine e testo */
+}
+
+.su-di-noi .immagine {
+    width: 600px; /* Riduci la larghezza dell'immagine */
+    height: 400px; /* Riduci l'altezza dell'immagine (mantenendo le proporzioni 4:3) */
+    flex-shrink: 0; /* Impedisce all'immagine di rimpicciolirsi */
+}
+
+.su-di-noi .immagine img {
+    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+    height: 100%; /* Altezza fissa per l'immagine */
+    object-fit: cover; /* Mantiene le proporzioni e copre l'area */
+    border-radius: 10px; /* Bordi arrotondati */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombra per profondità */
+}
+
+.su-di-noi .testo {
+    flex: 1; /* Occupa lo spazio rimanente */
+    text-align: left; /* Allinea il testo a sinistra */
+}
+
+/* Stile per i contenuti testuali */
+.su-di-noi .qualita,
+.su-di-noi .affidabilita,
+.su-di-noi .citazione {
+    margin-bottom: 40px; /* Spaziatura tra le sezioni */
+}
+
+.qualita h2 {
+    text-transform: uppercase;
+}
+
+.su-di-noi h2 {
+    font-size: 36px;
+    color: pink; /* Testo  */
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    text-transform: uppercase; /* Testo in maiuscolo */
+}
+
+.su-di-noi h3 {
+    font-size: 28px;
+    color: pink; /* Testo  */
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.su-di-noi p {
+    font-size: 18px;
+    color: #fff; /* Testo bianco */
+    margin: 0;
+    line-height: 1.6; /* Migliora la leggibilità */
+}
+
+.su-di-noi .citazione {
+    font-size: 20px;
+    color: #fff; /* Testo bianco */
+    font-style: italic; /* Testo in corsivo */
+    background: rgba(255, 255, 255, 0.1); /* Sfondo semi-trasparente */
+    border-radius: 10px; /* Bordi arrotondati */
+    padding: 20px; /* Spaziatura interna */
+    backdrop-filter: blur(5px); /* Sfocatura */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombra per profondità */
+}
+
+/* Stile per la sezione Pricing */
+.pricing {
+    padding: 80px 20px; /* Spaziatura interna */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+}
+
+/* Stile per la sezione Pricing */
+.pricing {
+    padding: 80px 20px; /* Spaziatura interna */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+}
+
+.pricing .contenuto {
+    max-width: 1400px; /* Aumenta la larghezza massima per contenere 5 piani */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pricing .piano {
+    flex: 1; /* Ogni piano occupa lo stesso spazio */
+    max-width: 220px; /* Riduci la larghezza massima per far spazio a 5 piani */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px; /* Riduci il padding per far spazio a più contenuto */
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .pricing .contenuto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing .piano {
+        max-width: 100%; /* Occupa tutta la larghezza su dispositivi mobili */
+        margin-bottom: 20px; /* Aggiunge spazio tra i piani */
+    }
+}
+
+.titolo-piani {
+    font-size: 36px;
+    color: pink; /* Testo rosa */
+    text-align: center; /* Allinea il testo al centro */
+    margin-bottom: 40px; /* Spaziatura sotto il titolo */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    font-weight: bold;
+    width: 100%; /* Occupa tutta la larghezza */
+}
+
+.piani-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pricing .piano:hover {
+    transform: scale(1.05); /* Ingrandisce leggermente il piano */
+    background-color: rgba(243, 126, 198, 0.2); /* Sfondo  semi-trasparente */
+    border-color: pink; /* Bordo  */
+    box-shadow: 0 8px 20px rgba(243, 126, 198, 0.2); /* Ombra  */
+    z-index: 2; /* Porta il piano in primo piano */
+}
+
+.pricing .piano h3 {
+    font-size: 28px;
+    color: pink; /* Testo  */
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transizione del colore */
+}
+
+.pricing .piano:hover h3 {
+    color: #fff; /* Testo bianco al passaggio del mouse */
+}
+
+.pricing .piano h4 {
+    font-size: 22px;
+    color: #fff; /* Testo bianco */
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transizione del colore */
+}
+
+.pricing .piano:hover h4 {
+    color: #fff; /* Testo bianco al passaggio del mouse */
+}
+
+.pricing .piano p {
+    font-size: 16px;
+    color: #ccc; /* Testo grigio chiaro */
+    margin: 0 0 20px 0;
+    line-height: 1.6; /* Migliora la leggibilità */
+    transition: color 0.3s ease; /* Transizione del colore */
+}
+
+.pricing .piano:hover p {
+    color: #fff; /* Testo bianco al passaggio del mouse */
+}
+
+.pricing .prezzo {
+    font-size: 36px;
+    color: pink; /* Testo  */
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transizione del colore */
+}
+
+.pricing .piano:hover .prezzo {
+    color: #fff; /* Testo bianco al passaggio del mouse */
+}
+
+/* Stile per la sezione Referenze */
+.referenze {
+    padding: 80px 20px;
+}
+
+.referenze .contenuto {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.referenze h2 {
+    font-size: 36px;
+    color: pink;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.grid-referenze {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Crea una griglia flessibile */
+    gap: 20px; /* Spazio tra le immagini */
+    align-items: center; /* Allinea le immagini verticalmente al centro */
+}
+
+.grid-referenze img {
+    width: 100%; /* Larghezza massima */
+    height: auto; /* Mantiene le proporzioni */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
+    opacity: 0.8; /* Opacità iniziale */
+}
+
+.grid-referenze img:hover {
+    transform: scale(1.1); /* Ingrandisce leggermente l'immagine */
+    opacity: 1; /* Opacità piena al passaggio del mouse */
+}
+
+/* Stile per la sezione FAQ */
+.faq {
+    padding: 80px 20px;
+    background-color: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq .contenuto {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    font-size: 36px;
+    color: pink;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.domanda {
+    font-size: 18px;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.domanda::after {
+    content: "+";
+    font-size: 24px;
+    color: pink;
+}
+
+.domanda.active::after {
+    content: "-";
+}
+
+.risposta {
+    font-size: 16px;
+    color: #ccc;
+    padding: 0 15px;
+    max-height: 0; /* Altezza iniziale (nascosta) */
+    overflow: hidden; /* Nasconde il contenuto che supera l'altezza */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Animazione fluida */
+}
+
+.risposta.visible {
+    max-height: 200px; /* Altezza massima (adatta in base al contenuto) */
+    padding-bottom: 15px; /* Spaziatura inferiore quando visibile */
+}
+
+/* Stile per la sezione Mappa e Contatti */
+.mappa-contatti {
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+}
+
+.mappa-contatti .contenuto {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.mappa-contatti h2 {
+    font-size: 36px;
+    color: pink; /* Testo rosa */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mappa {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombra per la mappa */
+}
+
+.mappa iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.info-contatti {
+    padding: 30px;
+    max-width: 100vh; /* Larghezza massima per il contenuto */
+    margin: 0 auto;
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+}
+
+.info-contatti h3 {
+    font-size: 24px;
+    color: pink; /* Testo rosa */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.info-contatti p {
+    font-size: 18px;
+    color: white; /* Testo bianco */
+    margin: 10px 0;
+}
+
+.info-contatti p:last-child {
+    margin-bottom: 0;
+}
+
+/* Stile per il footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: white; /* Testo bianco */
+    backdrop-filter: blur(10px); /* Effetto sfocatura */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linea di separazione sottile */
+}
+
+footer .contenuto {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: white; /* Testo bianco */
+}
+
+footer .social {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spazio tra le icone */
+    margin: 20px 0;
+}
+
+footer .social a {
+    color: white; /* Colore delle icone */
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+    color: pink; /* Colore rosa al passaggio del mouse */
+}
+
+/* Aggiungi queste regole alla fine di style.css e style_pages.css */
+
+@media (max-width: 768px) {
+    /* Header */
+    header img {
+        max-height: 100px; /* Riduci l'altezza del logo */
+    }
+
+    header img.small {
+        max-height: 40px; /* Riduci ulteriormente l'altezza del logo quando è piccolo */
+    }
+
+    nav ul {
+        flex-direction: column; /* Disposizione verticale per i link del menu */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Spaziatura tra i link del menu */
+    }
+
+    /* Sezione Principale */
+    .principale {
+        margin: 20px; /* Riduci il margine */
+        padding: 40px 20px; /* Riduci il padding */
+        margin-top: 150px; /* Riduci il margine superiore */
+    }
+
+    .principale h1 {
+        font-size: 36px; /* Riduci la dimensione del titolo */
+    }
+
+    .principale p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+    }
+
+    /* Sezione Su di Noi */
+    .su-di-noi .contenuto {
+        flex-direction: column; /* Disposizione verticale per immagine e testo */
+    }
+
+    .su-di-noi .immagine {
+        width: 100%; /* Larghezza piena per l'immagine */
+        height: auto; /* Altezza automatica */
+    }
+
+    /* Sezione Pricing */
+    .pricing .contenuto {
+        flex-direction: column; /* Disposizione verticale per i piani */
+    }
+
+    .pricing .piano {
+        max-width: 100%; /* Larghezza piena per i piani */
+        margin-bottom: 20px; /* Spaziatura tra i piani */
+    }
+
+    /* Sezione FAQ */
+    .faq .domanda {
+        font-size: 16px; /* Riduci la dimensione del testo */
+    }
+
+    .faq .risposta {
+        font-size: 14px; /* Riduci la dimensione del testo */
+    }
+
+    /* Sezione Mappa e Contatti */
+    .mappa iframe {
+        height: 300px; /* Riduci l'altezza della mappa */
+    }
+
+    .info-contatti {
+        padding: 20px; /* Riduci il padding */
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px; /* Riduci il padding */
+    }
+}
+
+/* Aggiungi queste regole CSS per il menu mobile */
+.hamburger-menu {
+    display: none; /* Nascondi il pulsante su desktop */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.mobile-nav {
+    display: none; /* Nascondi il menu mobile su desktop */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Mostra il pulsante su mobile */
+    }
+
+    nav ul {
+        display: none; /* Nascondi il menu desktop su mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .principale, .su-di-noi, .pricing, .referenze, .faq, .mappa-contatti {
+        margin: 20px; /* Riduci il margine */
+        padding: 20px; /* Riduci il padding */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mappa iframe {
+        height: 250px; /* Riduci l'altezza della mappa */
+    }
+}
