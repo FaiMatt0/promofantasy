@@ -65,8 +65,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Aggiungi questo script per gestire l'apertura/chiusura del menu mobile
-document.querySelector('.hamburger-menu').addEventListener('click', function () {
+/* HAMBURGER MENU */
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
     const mobileNav = document.querySelector('.mobile-nav');
-    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+
+    if (hamburgerMenu && mobileNav) {
+        hamburgerMenu.addEventListener('click', function () {
+            if (mobileNav.style.display === 'flex') {
+                mobileNav.style.display = 'none'; // Chiudi il menu
+            } else {
+                mobileNav.style.display = 'flex'; // Apri il menu
+            }
+        });
+    } else {
+        console.error('Elementi del menu non trovati!');
+    }
 });

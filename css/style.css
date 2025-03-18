@@ -684,18 +684,8 @@ footer .social a:hover {
         display: block; /* Mostra il pulsante hamburger */
     }
 
-    nav ul {
+    .desktop-nav {
         display: none; /* Nascondi il menu desktop */
-    }
-}
-
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block; /* Mostra il pulsante su mobile */
-    }
-
-    nav ul {
-        display: none; /* Nascondi il menu desktop su mobile */
     }
 }
 
