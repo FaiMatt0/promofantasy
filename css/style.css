@@ -678,6 +678,10 @@ footer .social a:hover {
     font-size: 24px;
 }
 
+.mobile-nav.open {
+    display: flex; /* Mostra il menu quando ha la classe "open" */
+}
+
 /* Mostra il menu hamburger e nascondi il menu desktop su mobile */
 @media (max-width: 768px) {
     .hamburger-menu {

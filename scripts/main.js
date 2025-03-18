@@ -71,12 +71,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileNav = document.querySelector('.mobile-nav');
 
     if (hamburgerMenu && mobileNav) {
+        // Chiudi il menu all'avvio (imposta display: none)
+        mobileNav.style.display = 'none';
+
         hamburgerMenu.addEventListener('click', function () {
-            if (mobileNav.style.display === 'flex') {
-                mobileNav.style.display = 'none'; // Chiudi il menu
-            } else {
+            if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
                 mobileNav.style.display = 'flex'; // Apri il menu
+            } else {
+                mobileNav.style.display = 'none'; // Chiudi il menu
             }
+        });
+    } else {
+        console.error('Elementi del menu non trovati!');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburgerMenu && mobileNav) {
+        hamburgerMenu.addEventListener('click', function () {
+            mobileNav.classList.toggle('open'); // Aggiungi o rimuovi la classe "open"
         });
     } else {
         console.error('Elementi del menu non trovati!');
