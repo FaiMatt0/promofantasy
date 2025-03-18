@@ -71,15 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileNav = document.querySelector('.mobile-nav');
 
     if (hamburgerMenu && mobileNav) {
-        // Chiudi il menu all'avvio (imposta display: none)
-        mobileNav.style.display = 'none';
-
         hamburgerMenu.addEventListener('click', function () {
-            if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                mobileNav.style.display = 'flex'; // Apri il menu
-            } else {
-                mobileNav.style.display = 'none'; // Chiudi il menu
-            }
+            mobileNav.classList.toggle('open'); // Aggiungi o rimuovi la classe "open"
         });
     } else {
         console.error('Elementi del menu non trovati!');
