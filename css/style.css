@@ -678,44 +678,10 @@ footer .social a:hover {
     font-size: 24px;
 }
 
+.mobile-nav {
+    display: none; /* Nascondi il menu di default */
+}
+
 .mobile-nav.open {
     display: flex; /* Mostra il menu quando ha la classe "open" */
-}
-
-/* Mostra il menu hamburger e nascondi il menu desktop su mobile */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block; /* Mostra il pulsante hamburger */
-    }
-
-    .desktop-nav {
-        display: none; /* Nascondi il menu desktop */
-    }
-}
-
-@media (max-width: 768px) {
-    .principale, .su-di-noi, .pricing, .referenze, .faq, .mappa-contatti {
-        margin: 20px; /* Riduci il margine */
-        padding: 20px; /* Riduci il padding */
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mappa iframe {
-        height: 250px; /* Riduci l'altezza della mappa */
-    }
 }
