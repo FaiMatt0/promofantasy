@@ -67,11 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* HAMBURGER MENU */
 document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navUl = document.querySelector('nav ul');
 
-    menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('active');
-        menu.classList.toggle('active');
+    hamburgerMenu.addEventListener('click', function () {
+        navUl.classList.toggle('active');
     });
 });
