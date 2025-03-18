@@ -3,231 +3,205 @@
 /* ------------------------- */
 /* Stile generale per mobile */
 /* ------------------------- */
-body {
-    overflow-x: hidden; /* Previene lo scrolling orizzontale */
-    font-size: 16px; /* Dimensione del testo di base per mobile */
-}
-
-/* Nascondi il canvas su mobile (se non necessario) */
-#canvas {
-    display: none;
-}
-
-/* ------------------------- */
-/* Header mobile */
-/* ------------------------- */
-.mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(26, 26, 26, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.mobile-logo {
-    max-height: 50px; /* Riduci l'altezza del logo per mobile */
-}
-
-.hamburger-menu {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Menu mobile */
-nav ul {
-    display: none; /* Nascondi il menu di default */
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(26, 26, 26, 0.9);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 60px; /* Altezza dell'header mobile */
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-    padding: 20px 0;
-}
-
-nav ul.active {
-    transform: translateX(0);
-}
-
-nav ul li {
-    margin: 15px 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* ------------------------- */
-/* Sezione Principale */
-/* ------------------------- */
-.principale {
-    padding: 20px;
-    margin-top: 80px; /* Spazio per l'header mobile */
-    text-align: center;
-}
-
-.principale h1 {
-    font-size: 36px; /* Riduci la dimensione del titolo */
-    color: pink;
-    margin-bottom: 20px;
-}
-
-.principale p {
-    font-size: 16px; /* Riduci la dimensione del testo */
-    color: white;
-}
-
-/* ------------------------- */
-/* Sezione Qualcosa */
-/* ------------------------- */
-.qualcosa {
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.qualcosa h2 {
-    font-size: 28px; /* Riduci la dimensione del titolo */
-    color: pink;
-    margin-bottom: 20px;
-}
-
-.qualcosa p {
-    font-size: 16px; /* Riduci la dimensione del testo */
-    color: white;
-}
-
-/* ------------------------- */
-/* Sezione Esplora */
-/* ------------------------- */
-.esplora {
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.esplora h2 {
-    font-size: 28px; /* Riduci la dimensione del titolo */
-    color: pink;
-    margin-bottom: 20px;
-}
-
-.esplora p {
-    font-size: 16px; /* Riduci la dimensione del testo */
-    color: white;
-}
-
-/* ------------------------- */
-/* Sezione FAQ */
-/* ------------------------- */
-.faq {
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.faq h2 {
-    font-size: 28px; /* Riduci la dimensione del titolo */
-    color: pink;
-    margin-bottom: 20px;
-}
-
-.faq-item {
-    margin-bottom: 15px;
-}
-
-.domanda {
-    font-size: 18px; /* Riduci la dimensione del testo */
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.risposta {
-    font-size: 16px; /* Riduci la dimensione del testo */
-    color: #ccc;
-    padding: 10px;
-}
-
-/* ------------------------- */
-/* Sezione Mappa e Contatti */
-/* ------------------------- */
-.mappa-contatti {
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.mappa iframe {
-    height: 300px; /* Riduci l'altezza della mappa */
-}
-
-.info-contatti {
-    padding: 20px;
-}
-
-.info-contatti h3 {
-    font-size: 24px; /* Riduci la dimensione del titolo */
-    color: pink;
-    margin-bottom: 20px;
-}
-
-.info-contatti p {
-    font-size: 16px; /* Riduci la dimensione del testo */
-    color: white;
-}
-
-/* ------------------------- */
-/* Footer */
-/* ------------------------- */
-footer {
-    padding: 20px;
-    text-align: center;
-    color: white;
-    margin-top: 20px;
-}
-
-footer p {
-    font-size: 16px; /* Riduci la dimensione del testo */
-}
-
-/* ------------------------- */
-/* Media Query per dispositivi mobili */
-/* ------------------------- */
 @media (max-width: 768px) {
-    .mobile-header {
-        display: flex; /* Mostra l'header mobile */
+    body {
+        overflow-x: hidden; /* Previene lo scrolling orizzontale */
+        font-size: 16px; /* Dimensione del testo di base per mobile */
+    }
+
+    /* ------------------------- */
+    /* Header mobile */
+    /* ------------------------- */
+    header {
+        padding: 10px 20px;
+        background-color: rgba(26, 26, 26, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    header img {
+        max-height: 50px; /* Riduci l'altezza del logo per mobile */
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra il pulsante del menu */
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 
     nav ul {
-        display: none; /* Nascondi il menu desktop */
+        display: none; /* Nascondi il menu di default */
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(26, 26, 26, 0.9);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 60px; /* Altezza dell'header mobile */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        padding: 20px 0;
     }
 
     nav ul.active {
-        display: flex; /* Mostra il menu mobile quando attivo */
+        transform: translateX(0);
     }
 
-    /* Aggiusta il padding e i margini per la versione mobile */
-    .principale, .qualcosa, .esplora, .faq, .mappa-contatti, footer {
-        margin: 20px;
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    /* ------------------------- */
+    /* Sezione Principale */
+    /* ------------------------- */
+    .principale {
         padding: 20px;
+        margin-top: 80px; /* Spazio per l'header mobile */
+        text-align: center;
+    }
+
+    .principale h1 {
+        font-size: 36px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .principale p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: white;
+    }
+
+    /* ------------------------- */
+    /* Sezione Qualcosa */
+    /* ------------------------- */
+    .qualcosa {
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .qualcosa h2 {
+        font-size: 28px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .qualcosa p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: white;
+    }
+
+    /* ------------------------- */
+    /* Sezione Esplora */
+    /* ------------------------- */
+    .esplora {
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .esplora h2 {
+        font-size: 28px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .esplora p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: white;
+    }
+
+    /* ------------------------- */
+    /* Sezione FAQ */
+    /* ------------------------- */
+    .faq {
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .faq h2 {
+        font-size: 28px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+    }
+
+    .domanda {
+        font-size: 18px; /* Riduci la dimensione del testo */
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .risposta {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: #ccc;
+        padding: 10px;
+    }
+
+    /* ------------------------- */
+    /* Sezione Mappa e Contatti */
+    /* ------------------------- */
+    .mappa-contatti {
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .mappa iframe {
+        height: 300px; /* Riduci l'altezza della mappa */
+    }
+
+    .info-contatti {
+        padding: 20px;
+    }
+
+    .info-contatti h3 {
+        font-size: 24px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .info-contatti p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: white;
+    }
+
+    /* ------------------------- */
+    /* Footer */
+    /* ------------------------- */
+    footer {
+        padding: 20px;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+    }
+
+    footer p {
+        font-size: 16px; /* Riduci la dimensione del testo */
     }
 }
