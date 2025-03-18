@@ -66,15 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* HAMBURGER MENU */
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
-
-    if (hamburgerMenu && mobileNav) {
-        hamburgerMenu.addEventListener('click', function () {
-            mobileNav.classList.toggle('open'); // Aggiungi o rimuovi la classe "open"
-        });
-    } else {
-        console.error('Elementi del menu non trovati!');
-    }
+document.getElementById('menu-icon').addEventListener('click', function() {
+    var navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
 });

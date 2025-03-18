@@ -24,45 +24,27 @@ header, .principale, .su-di-noi, .pricing, .referenze, .faq, footer {
 }
 
 header {
-    background-color: rgba(26, 26, 26, 0.8);
+    background-color: rgba(26, 26, 26, 0.8); /* Sfondo semi-trasparente */
     padding: 10px 0;
-    position: fixed;
+    text-align: center;
+    position: fixed; /* Fissa l'header in alto */
     width: 100%;
     top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
+    backdrop-filter: blur(10px); /* Sfocatura */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Ombra leggera */
 }
 
 header img {
-    max-height: 50px;
+    max-height: 200px;
     transition: max-height 0.3s ease;
 }
 
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+header img.small {
+    max-height: 50px;
 }
 
-.menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-.nav-links {
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -71,11 +53,13 @@ header img {
     align-items: center;
 }
 
-.nav-links li {
+nav ul li {
     margin: 0 15px;
+    display: flex;
+    align-items: flex-end; /* Allinea il contenuto del <li> nella parte bassa */
 }
 
-.nav-links li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -83,7 +67,7 @@ header img {
     padding: 5px 0;
 }
 
-.nav-links li a::before {
+nav ul li a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -96,43 +80,18 @@ header img {
     transition: transform 0.3s ease;
 }
 
-.nav-links li a:hover::before {
+nav ul li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.nav-links li a.active {
+nav ul li a.active {
     color: pink;
 }
 
-.nav-links li a.active::before {
+nav ul li a.active::before {
     transform: scaleX(1);
     background-color: pink;
-}
-
-/* Stili per dispositivi mobili */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: rgba(26, 26, 26, 0.9);
-        position: absolute;
-        top: 60px;
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
 }
 
 /* Stile per la sezione principale */
@@ -529,134 +488,4 @@ footer .social a {
 
 footer .social a:hover {
     color: pink; /* Colore rosa al passaggio del mouse */
-}
-
-/* Aggiungi queste regole alla fine di style.css e style_pages.css */
-
-@media (max-width: 768px) {
-    /* Header */
-    header img {
-        max-height: 100px; /* Riduci l'altezza del logo */
-    }
-
-    header img.small {
-        max-height: 40px; /* Riduci ulteriormente l'altezza del logo quando è piccolo */
-    }
-
-    nav ul {
-        flex-direction: column; /* Disposizione verticale per i link del menu */
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Spaziatura tra i link del menu */
-    }
-
-    /* Sezione Principale */
-    .principale {
-        margin: 20px; /* Riduci il margine */
-        padding: 40px 20px; /* Riduci il padding */
-        margin-top: 150px; /* Riduci il margine superiore */
-    }
-
-    .principale h1 {
-        font-size: 36px; /* Riduci la dimensione del titolo */
-    }
-
-    .principale p {
-        font-size: 16px; /* Riduci la dimensione del testo */
-    }
-
-    /* Sezione Su di Noi */
-    .su-di-noi .contenuto {
-        flex-direction: column; /* Disposizione verticale per immagine e testo */
-    }
-
-    .su-di-noi .immagine {
-        width: 100%; /* Larghezza piena per l'immagine */
-        height: auto; /* Altezza automatica */
-    }
-
-    /* Sezione Pricing */
-    .pricing .contenuto {
-        flex-direction: column; /* Disposizione verticale per i piani */
-    }
-
-    .pricing .piano {
-        max-width: 100%; /* Larghezza piena per i piani */
-        margin-bottom: 20px; /* Spaziatura tra i piani */
-    }
-
-    /* Sezione FAQ */
-    .faq .domanda {
-        font-size: 16px; /* Riduci la dimensione del testo */
-    }
-
-    .faq .risposta {
-        font-size: 14px; /* Riduci la dimensione del testo */
-    }
-
-    /* Sezione Mappa e Contatti */
-    .mappa iframe {
-        height: 300px; /* Riduci l'altezza della mappa */
-    }
-
-    .info-contatti {
-        padding: 20px; /* Riduci il padding */
-    }
-
-    /* Footer */
-    footer {
-        padding: 20px; /* Riduci il padding */
-    }
-}
-
- /* Menu Mobile */
-.mobile-nav {
-    display: none; /* Nascondi il menu di default */
-    position: absolute;
-    top: 100%; /* Posiziona il menu sotto l'header */
-    left: 0;
-    width: 100%;
-    background-color: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease; /* Animazione di scorrimento */
-    transform: translateY(-100%); /* Nascondi il menu sopra l'header */
-}
-
-.mobile-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-}
-
-.mobile-nav ul li {
-    margin: 15px 0;
-}
-
-.mobile-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Mostra il menu mobile quando ha la classe "open" */
-.mobile-nav.open {
-    transform: translateY(0); /* Mostra il menu scorrendo verso il basso */
-}
-
-/* Mostra il pulsante hamburger solo su mobile */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block; /* Mostra il pulsante hamburger */
-    }
-
-    .mobile-nav {
-        display: flex; /* Mostra il menu mobile */
-    }
 }
