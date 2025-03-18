@@ -3,16 +3,13 @@
 /* ------------------------- */
 /* Stile generale per mobile */
 /* ------------------------- */
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden; /* Previene lo scrolling orizzontale */
-        font-size: 16px; /* Dimensione del testo di base per mobile */
-    }
+/* mobile.css - Modifiche per l'header */
 
-    /* ------------------------- */
-    /* Header mobile */
-    /* ------------------------- */
+@media (max-width: 768px) {
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 10px 20px;
         background-color: rgba(26, 26, 26, 0.9);
         backdrop-filter: blur(10px);
@@ -35,9 +32,6 @@
         border: none;
         color: white;
         cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
     }
 
     nav ul {
@@ -89,6 +83,46 @@
     .principale p {
         font-size: 16px; /* Riduci la dimensione del testo */
         color: white;
+    }
+
+    /* ------------------------- */
+    /* Sezione Su di noi */
+    /* ------------------------- */
+    .su-di-noi {
+        padding: 20px;
+        margin-top: 80px; /* Spazio per l'header mobile */
+        text-align: center;
+    }
+
+    .su-di-noi .contenuto {
+        flex-direction: column; /* Disposizione verticale per immagine e testo */
+    }
+
+    .su-di-noi .immagine {
+        width: 100%; /* Larghezza piena per l'immagine */
+        height: auto; /* Altezza automatica */
+        margin-bottom: 20px; /* Spazio tra immagine e testo */
+    }
+
+    .su-di-noi .testo {
+        text-align: center; /* Allinea il testo al centro */
+    }
+
+    .su-di-noi h2 {
+        font-size: 28px; /* Riduci la dimensione del titolo */
+        color: pink;
+        margin-bottom: 20px;
+    }
+
+    .su-di-noi p {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        color: white;
+    }
+
+    .su-di-noi .citazione {
+        font-size: 16px; /* Riduci la dimensione del testo */
+        padding: 15px;
+        margin-top: 20px;
     }
 
     /* ------------------------- */
