@@ -6,36 +6,23 @@
 /* mobile.css - Modifiche per l'header */
 
 @media (max-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: rgba(26, 26, 26, 0.9);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    header img {
-        max-height: 50px; /* Riduci l'altezza del logo per mobile */
-    }
-
+    /* Stile per il pulsante del menu */
     .hamburger-menu {
-        display: block; /* Mostra il pulsante del menu */
+        display: block; /* Mostra il pulsante */
         font-size: 24px;
         background: none;
         border: none;
         color: white;
         cursor: pointer;
+        position: fixed; /* Posizione fissa */
+        top: 15px; /* Distanza dal bordo superiore */
+        right: 20px; /* Distanza dal bordo destro */
+        z-index: 1001; /* Sopra tutto */
     }
 
+    /* Stile per il menu */
     nav ul {
-        display: none; /* Nascondi il menu di default */
+        display: flex;
         flex-direction: column;
         align-items: center;
         background-color: rgba(26, 26, 26, 0.9);
@@ -44,25 +31,23 @@
         top: 60px; /* Altezza dell'header mobile */
         left: 0;
         width: 100%;
-        height: calc(100vh - 60px);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        max-height: 0; /* Inizialmente il menu è chiuso */
+        overflow: hidden; /* Nasconde il contenuto che supera l'altezza */
+        transition: max-height 0.3s ease; /* Animazione */
         z-index: 999;
-        padding: 20px 0;
+        padding: 0 20px; /* Padding laterale */
     }
 
-    nav ul.active {
-        transform: translateX(0);
+    /* Stile per il menu aperto */
+    nav ul.open {
+        max-height: 500px; /* Altezza massima del menu (adatta in base al contenuto) */
+        padding-top: 20px; /* Padding superiore quando il menu è aperto */
+        padding-bottom: 20px; /* Padding inferiore quando il menu è aperto */
     }
 
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
+    /* Stile per il logo */
+    .mobile-logo {
+        max-height: 50px; /* Riduci l'altezza del logo per mobile */
     }
 
     /* ------------------------- */

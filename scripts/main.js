@@ -70,7 +70,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navUl = document.querySelector('nav ul');
 
-    hamburgerMenu.addEventListener('click', function () {
-        navUl.classList.toggle('active');
-    });
+    if (hamburgerMenu && navUl) { // Verifica che gli elementi esistano
+        hamburgerMenu.addEventListener('click', function () {
+            if (navUl.style.maxHeight) {
+                navUl.style.maxHeight = null; // Chiudi il menu
+                navUl.classList.remove('open'); // Rimuovi la classe 'open'
+            } else {
+                navUl.style.maxHeight = navUl.scrollHeight + 'px'; // Apri il menu
+                navUl.classList.add('open'); // Aggiungi la classe 'open'
+            }
+        });
+    } else {
+        console.error("Elementi non trovati: verifica i selettori.");
+    }
 });
