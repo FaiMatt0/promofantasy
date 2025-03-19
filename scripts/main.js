@@ -84,3 +84,22 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Elementi non trovati: verifica i selettori.");
     }
 });
+
+/* COOKIES */
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieBanner = document.getElementById("cookie-consent-banner");
+    const acceptCookiesButton = document.getElementById("accept-cookies");
+
+    // Check if the user has already accepted cookies
+    if (!localStorage.getItem("cookiesAccepted")) {
+        cookieBanner.style.display = "flex"; // Show the banner if cookies are not accepted
+    } else {
+        cookieBanner.style.display = "none"; // Hide the banner if cookies are accepted
+    }
+
+    // Handle the "Accept" button click
+    acceptCookiesButton.addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "true"); // Set a flag in localStorage
+        cookieBanner.style.display = "none"; // Hide the banner
+    });
+});
